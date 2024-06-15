@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import generateCompletion from '../../../lib/openai';
+import generateCompletion  from '../../../lib/openai';
+
 // Define the POST handler using the Request and Response from the Fetch API
 export async function POST(request: Request) {
   try {
@@ -9,6 +10,7 @@ export async function POST(request: Request) {
 
     // Validate the presence of inputText in the request body
     if (!inputText) {
+      console.error('Missing inputText in request body:', body);
       return NextResponse.json({ error: 'Input text is required' }, { status: 400 });
     }
 
@@ -17,6 +19,7 @@ export async function POST(request: Request) {
 
     // Generate the completion using the OpenAI API
     const result = await generateCompletion(inputText);
+    console.log('Generated completion:', result);
 
     // Return the generated completion as a JSON response
     return NextResponse.json({ rewrittenText: result }, { status: 200 });
