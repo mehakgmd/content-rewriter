@@ -1,7 +1,5 @@
-// src/app/api/rewrite/route.ts
 import { NextResponse } from 'next/server';
-import { generateCompletion } from '../../../lib/openai';
-
+import generateCompletion from '../../../lib/openai';
 // Define the POST handler using the Request and Response from the Fetch API
 export async function POST(request: Request) {
   try {

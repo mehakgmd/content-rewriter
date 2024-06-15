@@ -6,7 +6,7 @@ const openai = new OpenAI({
   organization: process.env.NEXT_PUBLIC_OPENAI_ORGANIZATION_ID,  // Optional
 });
 
-export async function generateCompletion(inputText: string): Promise<string> {
+export default async function generateCompletion(inputText: string): Promise<string> {
   try {
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',  // Specify the model
