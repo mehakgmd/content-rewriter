@@ -9,7 +9,11 @@ module.exports = {
       dark: "#0d1b2a",
       light: "#778da9",
       white: "#ffffff",
-      grey: "#e9ecef"
+      grey: "#e9ecef",
+      white: "#ffffff",
+      red: "#ffeef2",
+      darkRed: "#bf0603"
+
 
     },
     variants: {
